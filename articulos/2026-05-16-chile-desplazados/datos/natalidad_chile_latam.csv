@@ -1,0 +1,10 @@
+country,iso,fertility_rate_2024,source
+Corea del Sur,KR,0.748,World Bank SP.DYN.TFRT.IN
+Chile,CL,1.140,World Bank SP.DYN.TFRT.IN
+Japón,JP,1.150,World Bank SP.DYN.TFRT.IN
+Argentina,AR,1.504,World Bank SP.DYN.TFRT.IN
+Brasil,BR,1.614,World Bank SP.DYN.TFRT.IN
+Colombia,CO,1.634,World Bank SP.DYN.TFRT.IN
+México,MX,1.892,World Bank SP.DYN.TFRT.IN
+Perú,PE,1.965,World Bank SP.DYN.TFRT.IN
+Tasa reemplazo,-,2.100,Estándar demográfico

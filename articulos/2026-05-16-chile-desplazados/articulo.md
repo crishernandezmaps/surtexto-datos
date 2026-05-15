@@ -82,7 +82,7 @@ Pero el dato más revelador no está en quiénes llegan, sino en quiénes el Est
 
 Existen aproximadamente 75.000 órdenes de expulsión pendientes en Chile, según medios locales. Cerca de la mitad corresponden a ciudadanos venezolanos.
 
-Desde que Kast asumió en marzo, se han ejecutado 2 vuelos de deportación con un total de 80 personas. A ese ritmo — 32 personas por mes — Chile necesitaría **937 años** para ejecutar todas las órdenes de expulsión pendientes.
+Desde que Kast asumió en marzo, se han ejecutado 2 vuelos de deportación con un total de 80 personas. A ese ritmo — 32 personas por mes — Chile necesitaría **196 años** para ejecutar todas las órdenes de expulsión pendientes.
 
 En su primera semana en el cargo, Kast inició la construcción de una zanja en el desierto de Atacama, en la frontera con Perú y Bolivia, para evitar los ingresos irregulares.
 
@@ -114,7 +114,7 @@ Es el país que mejor protege a su población de desastres naturales en toda Am�
 
 Y es el país que quiere convertir escuelas y hospitales — las mismas instituciones a las que les recorta cientos de millones de dólares — en puestos de control migratorio.
 
-Los 1,5 millones de evacuados por el tsunami volvieron a casa al día siguiente. Los 330.000 migrantes irregulares no tienen a dónde volver. Y las 75.000 órdenes de expulsión seguirán acumulándose, a razón de 937 años.
+Los 1,5 millones de evacuados por el tsunami volvieron a casa al día siguiente. Los 330.000 migrantes irregulares no tienen a dónde volver. Y las 75.000 órdenes de expulsión seguirán acumulándose, a razón de 196 años.
 
 ---
 

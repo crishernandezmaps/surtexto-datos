@@ -44,5 +44,5 @@ Todos los datos utilizados en este artículo, con su fuente primaria y método d
 ## Notas metodologicas
 
 - Los datos de migracion del World Bank son estimaciones basadas en modelos demograficos, no conteos exactos. Se presentan como tal.
-- La cifra de "937 años para deportar a todos" es un calculo editorial (75.000 ordenes / 80 deportados en 2.5 meses × 12 meses) para ilustrar la escala. No es una proyeccion.
+- La cifra de "196 años para deportar a todos" es un calculo editorial (75.000 ordenes / 80 deportados en 2.5 meses × 12 meses) para ilustrar la escala. No es una proyeccion.
 - Los datos del IDMC sobre desplazamiento incluyen movimientos temporales (evacuaciones). Chile aparece alto porque evacua efectivamente, no porque tenga una crisis humanitaria. Esto se explica explicitamente en el articulo.

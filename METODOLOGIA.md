@@ -13,6 +13,96 @@ Proceso editorial para producir una pieza semanal por pais con visualizaciones d
 
 ---
 
+## Sistema de borradores y publicacion
+
+### Draft / Preview / Publicado
+
+Las ediciones viven en `frontend/src/pages/ediciones/{slug}.astro`. Cada pieza tiene un flag `draft` en el frontmatter:
+
+```javascript
+// ── DRAFT FLAG ──────────────────────────────────────────
+const draft = true;   // borrador: solo visible con ?preview
+// const draft = false;  // publicado: visible para todos
+// ────────────────────────────────────────────────────────
+```
+
+| Estado | URL | Quien ve |
+|--------|-----|----------|
+| `draft = true` | `/ediciones/{slug}` | Nadie (404) |
+| `draft = true` | `/ediciones/{slug}?preview` | Solo quien tenga el link |
+| `draft = false` | `/ediciones/{slug}` | Todos (publico) |
+
+Cuando `draft = true`:
+- Aparece un banner amarillo "BORRADOR — Solo visible para editores"
+- Google Analytics NO se carga (no contaminar metricas)
+- El articulo no aparece en ningun indice ni navegacion
+
+Para publicar: cambiar `draft = true` → `draft = false`, rebuild, deploy.
+
+### Workflow de iteracion
+
+1. Crear `ediciones/{slug}.astro` con `draft = true`
+2. Deploy a la VPS (scp + build + restart)
+3. Revisar en `surtexto.com/ediciones/{slug}?preview`
+4. Iterar: editar, deploy, revisar
+5. Cuando este listo: `draft = false`, deploy final
+6. Compartir la URL publica
+
+---
+
+## Citacion de fuentes
+
+### Regla: cada dato debe tener su fuente explicita
+
+Toda cifra, porcentaje, cita o afirmacion factual en el articulo debe llevar una cita inline que identifique:
+- **Quien** lo dice (organismo, persona, institucion)
+- **Cuando** (ano del dato o de la publicacion)
+
+### Formato de cita inline
+
+```html
+<span class="cite" title="Descripcion completa de la fuente">[Fuente, Año]</span>
+```
+
+La cita aparece como superindice junto al dato. Al pasar el mouse, muestra la descripcion completa via `title`.
+
+### Tipos de fuente y como citarlas
+
+| Origen | Formato de cita | Ejemplo |
+|--------|----------------|---------|
+| Cable de agencia | `[EFE, 2026]` | Hechos reportados directamente por EFE |
+| Dato oficial citado en cable | `[Institucion vía EFE, 2026]` | INE, ministerios, declaraciones oficiales |
+| API de datos publica | `[Organismo, Año]` | World Bank, CEPAL, FAO |
+| Informe de organismo | `[Organismo, Año]` | IDMC GRID 2025, ONU |
+| Calculo editorial propio | `[calculo SurTexto]` | Derivaciones aritmeticas nuestras |
+
+### Reglas de citacion
+
+1. **Si viene del cable EFE**: citar como `[EFE, 2026]`. Si el cable cita una fuente oficial (INE, ministerio, canciller), citar como `[Fuente vía EFE, 2026]`.
+
+2. **Si viene de una API o dataset externo**: citar el organismo y el ano del dato: `[World Bank, 2025]`. Especificar el indicador en la seccion de fuentes al final.
+
+3. **Si es un calculo nuestro**: marcar siempre como `[calculo SurTexto]` y explicar la formula en la seccion de fuentes.
+
+4. **Nunca presentar un calculo editorial como si fuera un dato de fuente**. "937 anos" es un calculo nuestro, no un dato del INE.
+
+5. **Las cifras aproximadas deben marcarse**: si el cable dice "cerca de la mitad", no convertir a un numero exacto sin indicarlo.
+
+### Seccion de fuentes al final del articulo
+
+Cada articulo cierra con una seccion `<h2>Fuentes</h2>` que lista todas las citas usadas con su referencia completa:
+
+```html
+<li><strong>[IDMC, 2025]</strong> — Internal Displacement Monitoring Centre,
+    Global Report on Internal Displacement (GRID) 2025.</li>
+<li><strong>[World Bank, 2025]</strong> — World Bank Open Data, indicador
+    SM.POP.NETM. Consultado via API mayo 2026.</li>
+<li><strong>[calculo SurTexto]</strong> — 937 anos = 75.000 ordenes / 32
+    deportaciones/mes. Calculo editorial, no proyeccion.</li>
+```
+
+---
+
 ## Proceso por articulo
 
 ### Paso 1: Seleccion editorial (del repositorio S3)
